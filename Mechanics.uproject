@@ -18,11 +18,6 @@
 		{
 			"Name": "GameplayAbilities",
 			"Enabled": true
-		},
-		{
-			"Name": "SafeDelete",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/daf26df8b4c94149900ea0dd0a264071"
 		}
 	]
 }
