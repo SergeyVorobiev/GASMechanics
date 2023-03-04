@@ -17,7 +17,7 @@ void UATaskPlayMontageAndWaitForEvent::Activate()
 		return;
 	}
 	bool bPlayedMontage = false;
-	if (AbilitySystemComponent)
+	if (AbilitySystemComponent != nullptr)
 	{
 		const FGameplayAbilityActorInfo* ActorInfo = Ability->GetCurrentActorInfo();
 		UAnimInstance* AnimInstance = ActorInfo->GetAnimInstance();
@@ -67,7 +67,7 @@ void UATaskPlayMontageAndWaitForEvent::OnDestroy(bool AbilityEnded)
 	{
 		Ability->OnGameplayAbilityCancelled.Remove(CancelledHandleDelegate);
 	}
-	if (AbilitySystemComponent)
+	if (AbilitySystemComponent != nullptr)
 	{
 		AbilitySystemComponent->RemoveGameplayEventTagContainerDelegate(EventTags, EventHandleDelegate);
 	}
@@ -138,7 +138,6 @@ void UATaskPlayMontageAndWaitForEvent::OnMontageEnded(UAnimMontage* Montage, boo
 
 void UATaskPlayMontageAndWaitForEvent::ExternalCancel()
 {
-	check(AbilitySystemComponent);
 	OnAbilityCancelled();
 	Super::ExternalCancel();
 }
@@ -166,7 +165,7 @@ bool UATaskPlayMontageAndWaitForEvent::StopPlayingMontage() const
 	{
 		return false;
 	}
-	if (AbilitySystemComponent && Ability)
+	if (AbilitySystemComponent != nullptr && Ability)
 	{
 		if (AbilitySystemComponent->GetAnimatingAbility() == Ability
 			&& AbilitySystemComponent->GetCurrentMontage() == MontageToPlay)
