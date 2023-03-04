@@ -12,6 +12,7 @@ The project was created by using **4.27**, to migrate to **5.1** do the next:
 * Double click on 'Mechanics.uproject' and wait a little while the compiler does the work, after compiling UE 5.1 should start automatically.
 * To generate VS project files right click on the 'Mechanics.uproject' and click on 'Generate Visual Studio project files'.
 * **Troubleshooting**. After migration to 5.1 you may have a problem when the enemies do not walk. If so, in the 'Content Browser' go to: All->Content->Levels and open the 'GameLevel' up. In 'Outliner' select 'NavMeshBoundsVolume' and pull up and down the Z-ax of the gizmo and tap P you should see the green area that specifies the walking area for the enemies. Now it should work, but if not, delete 'NavMeshBoundsVolume' and place the new one with the same 'Transform' parameters as before.
+If you have a problem when enemies can not get up on the central circle because of height, tap on 'NavMeshBoundsVolume' in 'Outliner' then under the 'Details' section below find 'BrushSettings' and start to change Z value by using mouse (not type a number, looks like a bug) until you see that circle edge is covered up by green color.
 
 Free assets was taken from:
 * StarterContent
